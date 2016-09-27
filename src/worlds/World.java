@@ -10,6 +10,11 @@ import dev.ryoung.tilegame.entities.statics.BagEnd;
 import dev.ryoung.tilegame.entities.statics.FenceDown;
 import dev.ryoung.tilegame.entities.statics.FenceEnd;
 import dev.ryoung.tilegame.entities.statics.FenceLeft;
+import dev.ryoung.tilegame.entities.statics.HedgeSideToSide;
+import dev.ryoung.tilegame.entities.statics.HedgeTop;
+import dev.ryoung.tilegame.entities.statics.HedgeUpAndDown;
+import dev.ryoung.tilegame.entities.statics.HedgeWestCorner;
+import dev.ryoung.tilegame.entities.statics.HobbitHole1;
 import dev.ryoung.tilegame.tiles.Tile;
 import dev.ryoung.tilegame.utils.Utils;
 
@@ -27,9 +32,27 @@ public class World {
 	public World(Handler handler, String path){
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-		entityManager.addEntity(new BagEnd(handler, 170, 10));
 		
-		//World fence
+		// Bag End
+		entityManager.addEntity(new BagEnd(handler, 170, 10));
+		entityManager.addEntity(new FenceDown(handler, 210, 270));
+		entityManager.addEntity(new FenceDown(handler, 210, 318));
+		entityManager.addEntity(new FenceLeft(handler, 223, 366));
+		entityManager.addEntity(new FenceLeft(handler, 271, 366));
+		entityManager.addEntity(new FenceLeft(handler, 319, 366));
+		entityManager.addEntity(new FenceLeft(handler, 367, 366));
+		entityManager.addEntity(new FenceLeft(handler, 415, 366));
+		entityManager.addEntity(new FenceLeft(handler, 463, 366));
+		entityManager.addEntity(new FenceEnd(handler, 499, 366));
+		
+		entityManager.addEntity(new FenceDown(handler, 652, 270));
+		entityManager.addEntity(new FenceDown(handler, 652, 318));
+		entityManager.addEntity(new FenceLeft(handler, 616, 366));
+		entityManager.addEntity(new FenceEnd(handler, 652, 366));
+		
+		entityManager.addEntity(new HobbitHole1(handler, 300, 900));
+		
+		// World fence
 		entityManager.addEntity(new FenceDown(handler, -7, 0));
 		entityManager.addEntity(new FenceDown(handler, -7, entityHeight));
 		for(int i = 2; i < 28; i++){
@@ -46,6 +69,7 @@ public class World {
 		for(int i = 13; i < 80; i++){
 			entityManager.addEntity(new FenceLeft(handler, (entityWidth * i) + 36, 0));
 		}
+		// End of Fence
 		
 		loadWorld(path);
 		

@@ -13,6 +13,9 @@ public class Assets {
 	public static BufferedImage dirtPatch, brick, grassHole, pathGreen, pathRed, pathRock, water;
 	public static BufferedImage dirtPathUp, dirtPathDown, dirtPathLeft, dirtPathRight, dirtPathNW, dirtPathNE, dirtPathSW, dirtPathSE;
 	
+	public static BufferedImage hobbitHole1, hobbitHole2, hobbitHole3;
+	public static BufferedImage hedgeTop, hedgeUpAndDown, hedgeSideToSide, hedgeWestCorner, hedgeEastCorner, hedgeLeftCap, hedgeRightCap;
+	
 	public static BufferedImage bilbo_forward;
 	public static BufferedImage[] player_down, player_up;
 	public static int playerHeight = 26;
@@ -65,6 +68,18 @@ public class Assets {
 		dirtPathNE = sheet.crop((width +1) * 10, (height + 1) * 3, width, height);
 		dirtPathSW = sheet.crop((width +1) * 8, (height + 1) * 3, width, height);
 		dirtPathSE = sheet.crop((width +1) * 9, (height + 1) * 3, width, height);
+		
+		hobbitHole1 = sheet.crop(((width + 1) * 11) + 1, (height * 7) + 1, width * 7, height * 5);
+		//hobbitHole2 = sheet.crop((width + 1) * 12, 0, width * 15, height * 7);
+		//hobbitHole3 = sheet.crop((width + 1) * 12, 0, width * 15, height * 7);
+		
+		hedgeTop = sheet.crop((width + 1) * 12, (height * 12) + 3, width, height);
+		hedgeUpAndDown = sheet.crop((width + 1) * 12, (height * 15) + 3, width, height);
+		hedgeSideToSide = sheet.crop((width + 1) * 13, (height * 16) + 4, width, height);
+		hedgeWestCorner = sheet.crop((width + 1) * 12, (height * 16) + 4, width, height);
+		hedgeEastCorner = sheet.crop((width + 1) * 12, 0, width, height);
+		hedgeLeftCap = sheet.crop((width + 1) * 12, 0, width, height);
+		hedgeRightCap = sheet.crop((width + 1) * 12, 0, width, height);
 		
 		startButton = new BufferedImage[2];
 		startButton[0] = sheet.crop(0, 170, width * 8, height * 2);
