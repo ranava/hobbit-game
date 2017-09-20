@@ -21,9 +21,8 @@ public class Assets {
 	public static int playerHeight = 26;
 	
 	public static BufferedImage bagend;
-	public static BufferedImage fenceDown;
-	public static BufferedImage fenceEnd;
-	public static BufferedImage fenceLeft;
+	public static BufferedImage fenceDown, fenceEnd, fenceLeft;
+	public static BufferedImage greenTree;
 	
 	public static void init(){
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/hobbitsprite4.png"));
@@ -72,6 +71,8 @@ public class Assets {
 		hobbitHole1 = sheet.crop(((width + 1) * 11) + 1, (height * 7) + 1, width * 7, height * 5);
 		//hobbitHole2 = sheet.crop((width + 1) * 12, 0, width * 15, height * 7);
 		//hobbitHole3 = sheet.crop((width + 1) * 12, 0, width * 15, height * 7);
+		
+		greenTree = sheet.crop((width + 1) * 7, (height + 1) * 5, (width * 4), (height * 5));
 		
 		hedgeTop = sheet.crop((width + 1) * 12, (height * 12) + 3, width, height);
 		hedgeUpAndDown = sheet.crop((width + 1) * 12, (height * 15) + 3, width, height);
